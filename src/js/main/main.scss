@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.root {
+  height: 100%;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.preview {
+  border: 1px solid #fff;
+  border-radius: 15px;
+  width: 99vw;
+  height: 35vh;
+}
+
+.content {
+  // flex: 1;
+  height: 100%;
+}
