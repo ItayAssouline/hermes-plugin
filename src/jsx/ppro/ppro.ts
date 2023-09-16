@@ -57,9 +57,4 @@ export const createTitles = (srtPath: string, startTime: number) => {
     return true;
   }
   return false;
-  // activeSeq.createCaptionTrack(
-  //   importedItem,
-  //   startAtTime,
-  //   Sequence.CAPTION_FORMAT_SUBTITLE
-  // );
 };
