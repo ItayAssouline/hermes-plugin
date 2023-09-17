@@ -7,3 +7,8 @@ export interface ITranscription {
   startTime: number;
   transcription: string;
 }
+
+export interface ILanguage {
+  text: string;
+  value: string;
+}
