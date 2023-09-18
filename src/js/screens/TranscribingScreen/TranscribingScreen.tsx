@@ -10,8 +10,8 @@ const TranscribingScreen = () => {
         <span className="title">Transcribing</span>
         <span className="subtitle">Don’t close this window</span>
       </div>
-      
-        <ProgressLoader />
+
+      <ProgressLoader />
     </div>
   );
 };

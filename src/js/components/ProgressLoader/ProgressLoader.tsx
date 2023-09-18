@@ -3,22 +3,17 @@ import "./progressLoader.css";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const ProgressLoader = () => {
-  const [percent, setPercent] = useState(0);
-
-  useEffect(() => {
-    setInterval(() => {
-      setPercent((prev) => (prev += 10) % 100);
-    }, 1200);
-  }, []);
-
+interface ProgressLoaderProps {
+  percent?: number;
+}
+const ProgressLoader = ({ percent }: ProgressLoaderProps) => {
   return (
     <div className="progressLoaderContainer">
-      <div className="circle">{percent}%</div>
+      <div className="circle">{percent ? `${percent}%` : ""}</div>
 
-      <div className="border">
+      <div className={`border ${!percent && "rotating"}`}>
         <CircularProgressbar
-          value={percent}
+          value={percent ?? 80}
           background={false}
           backgroundPadding={0}
           strokeWidth={1}
