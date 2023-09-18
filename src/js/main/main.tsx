@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 import { subscribeBackgroundColor } from "../lib/utils/bolt";
-import { useTranscription } from "../hooks";
-import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
-import LanguagePicker from "../../components/LanguagePicker/LanguagePicker";
-
+import HomeScreen from "../screens/Home/HomeScreen";
+import { createBrowserRouter, Link } from "react-router-dom";
 import "./main.scss";
-import Footer from "../../components/Footer/Footer";
-
-const languages = [
-  { text: "Hebrew", value: "he" },
-  { text: "Persian", value: "fr" },
-  { text: "English", value: "en" },
-  { text: "Arabic", value: "ar" },
-  { text: "Auto Detect Language", value: "auto" },
-];
+import {
+  createRoutesFromElements,
+  Outlet,
+  Route,
+  RouterProvider,
+} from "react-router";
+import { useScreen } from "../contexts/Router/RouterContext";
+import { SCREEN } from "../contexts/Router/RouterContextProvider";
+import TranscribingScreen from "../screens/TranscribingScreen/TranscribingScreen";
 
 const Main = () => {
   const [bgColor, setBgColor] = useState("#1E1E1E");
@@ -23,15 +21,22 @@ const Main = () => {
       subscribeBackgroundColor(setBgColor);
     }
   }, []);
-  const [age, setAge] = useState("");
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
-  };
+  const [authenticated, setAuthenticated] = useState(true);
 
-  const { createTranscription, uploadProgress } = useTranscription();
-  const [selectedLanguage, setSelectedLanguage] = useState(4);
-  const [punctuations, setPunctuations] = useState(true);
+  const { screen, setScreen } = useScreen();
+
+  if (!authenticated)
+    return (
+      <div
+        className="app"
+        style={{
+          background: `radial-gradient(circle at center bottom, #1a2537, #1E1E1E)`,
+        }}
+      >
+        <h2>auth</h2>
+      </div>
+    );
 
   return (
     <div
@@ -40,33 +45,9 @@ const Main = () => {
         background: `radial-gradient(circle at center bottom, #1a2537, #1E1E1E)`,
       }}
     >
-      <div className="content">
-        <div className="title">
-          <span id="title">Doing the hard work,</span>
-          <span id="subtitle">One word at a time</span>
-        </div>
-        <div className="language-picker">
-          <span className="label">Language</span>
-          <LanguagePicker
-            languages={languages}
-            selectedLanguage={selectedLanguage}
-            selectLanguage={setSelectedLanguage}
-          />
-        </div>
-        <div
-          className="checkbox"
-          onClick={() => {
-            setPunctuations((prev) => !prev);
-          }}
-        >
-          <div className={`tick ${!punctuations && "ticked"}`}></div>
-          <span>Disable punctuations</span>
-        </div>
-        <div className="transcribe btn" onClick={createTranscription}>
-          Transcribe
-        </div>
-      </div>
-      <Footer />
+      {/* {screen === SCREEN.Transcribing && <TranscribingScreen />} */}
+      <TranscribingScreen />
+      {/* {screen === SCREEN.Home && <HomeScreen />} */}
     </div>
   );
 };

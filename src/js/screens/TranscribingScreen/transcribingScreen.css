@@ -1,0 +1,20 @@
+.transcribingScreenContent {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: light;
+  /* font-size: 1.4em; */
+  row-gap: 5%;
+}
+
+.transcribingScreenContent .titles {
+  display: flex;
+  flex-direction: column;
+}
+.transcribingScreenContent .subtitle {
+  font-size: 0.5em;
+  color: #909090;
+}

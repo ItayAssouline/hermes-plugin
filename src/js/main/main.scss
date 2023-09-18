@@ -10,42 +10,8 @@
 .app {
   font-family: "GT Planar";
   display: flex;
-  flex-direction: column;
   height: 100vh;
-  font-size: 2em;
-}
-.preview {
-  border: 1px solid #fff;
-  border-radius: 15px;
-  width: 99vw;
-  height: 35vh;
-}
-
-.content {
-  // flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 7vh;
-  height: 100%;
-  width: 100%;
-  padding: 0 10vw;
-}
-
-.title span {
-  line-height: 1;
-  margin: 0;
-  padding: 0;
-}
-#title {
-  text-align: left;
-  display: block;
-}
-
-#subtitle {
-  text-align: left;
-  display: block;
-  font-weight: bold;
+  font-size: 1.5em;
 }
 
 .btn {
@@ -53,7 +19,7 @@
   width: fit-content;
   color: #000;
   font-weight: bold;
-  font-size: 0.6em;
+  font-size: 0.8em;
   padding: 7px 25px;
   border-radius: 50px;
   transition: 0.2s;
@@ -63,32 +29,4 @@
   cursor: pointer;
   color: #fff;
   background: #000;
-}
-
-.label {
-  font-size: 0.8em;
-  margin-bottom: 5px;
-}
-
-.checkbox {
-  display: flex;
-  align-items: center;
-  font-size: 0.6em;
-  column-gap: 10px;
-  width: fit-content;
-}
-.checkbox:hover {
-  cursor: pointer;
-}
-
-.tick {
-  background: transparent;
-  border: 1px solid #fff;
-  width: 15px;
-  height: 15px;
-  border-radius: 3px;
-  transition: 0.2s;
-}
-.tick.ticked {
-  background: #fff;
 }

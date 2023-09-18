@@ -1,0 +1,56 @@
+.homeScreenContent {
+  height: 100%;
+}
+.homeScreenContent .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 7vh;
+  height: 100%;
+  width: 100%;
+  padding: 0 10vw;
+}
+
+.title span {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+#title {
+  text-align: left;
+  display: block;
+}
+
+#subtitle {
+  text-align: left;
+  display: block;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 0.6em;
+  column-gap: 10px;
+  width: fit-content;
+}
+.checkbox:hover {
+  cursor: pointer;
+}
+
+.tick {
+  background: transparent;
+  border: 1px solid #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  transition: 0.2s;
+}
+.tick.ticked {
+  background: #fff;
+}

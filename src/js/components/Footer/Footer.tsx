@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import HFALogo from "../../js/assets/icons/HFA-LOGO.svg";
+import HFALogo from "../../assets/icons/HFA-LOGO.svg";
 
 const Footer = () => {
   return (

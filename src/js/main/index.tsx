@@ -6,6 +6,7 @@ import Main from "./main";
 import { ThemeProvider } from "@emotion/react";
 import { createTheme } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
+import { RouterProvider } from "../contexts/Router/RouterContextProvider";
 
 initBolt();
 
@@ -17,7 +18,9 @@ const darkTheme = createTheme({
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <ThemeProvider theme={darkTheme}>
-    <CssBaseline />
-    <Main />
+    <RouterProvider>
+      <CssBaseline />
+      <Main />
+    </RouterProvider>
   </ThemeProvider>
 );

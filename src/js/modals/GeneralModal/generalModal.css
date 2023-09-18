@@ -1,0 +1,55 @@
+.general-modal {
+  height: 100vh;
+  width: 100vw;
+  background: #000000df;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(1px);
+  font-size: 0.55em;
+  text-align: left;
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  width: 80vw;
+  border-radius: 20px;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  row-gap: 20px;
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.modal-chip {
+  background: #2f2f2f;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1.5px solid #4e4e4e;
+}
+.modal-actions {
+  display: flex;
+  align-items: center;
+  column-gap: 10%;
+  color: #ff3737;
+  font-weight: bold;
+}
+.modal-action-btn {
+  font-size: 1em;
+}
+
+.modal-cancel-btn {
+  text-decoration: underline;
+}
+
+.modal-cancel-btn:hover {
+  cursor: pointer;
+}

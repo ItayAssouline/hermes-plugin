@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
-import SideArrow from "../../js/assets/icons/side-arrow.svg";
-import { ILanguage } from "../../js/types";
+import SideArrow from "../../assets/icons/side-arrow.svg";
+import { ILanguage } from "../../types";
 import "./languagePicker.css";
 
 const container = {
